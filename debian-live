@@ -1,3 +1,4 @@
+#http://ftp.debian.org/debian/dists/stretch/main/installer-amd64/current/images/netboot/netboot.tar.gz
 apt install live-build
 
 # many packages have to be downloaded for best mirror use >
