@@ -1,0 +1,38 @@
+apt install live-build
+
+# many packages have to be downloaded for best mirror use >
+# apt install netselect-apt && netselect.app
+# actually best server http://mirror.de.leaseweb.net/debian
+# create project folder
+
+mkdir default-live
+cd default-live
+lb config   # creates files and folder structure 
+
+# example config :
+cp /usr/share/doc/live-build/examples/auto/* auto/
+
+set -e
+
+lb config noauto \
+    --mode debian \
+    --architectures i386 \
+    --debian-installer false \
+    --archive-areas "main contrib non-free" \
+    --apt-indices false \
+    --memtest none \
+    "${@}"
+ # after channging config file -> execute lb config again
+ lb config
+ 
+ # the folder config/includes.chroot contains the file structure of the new iso
+ # if we create opt folder inside this it will be the /opt foolder of the iso
+ 
+ # package lists contains the software that is installed
+ # echo vlc >> config/package-lists/my.list.chroot
+ # each package has to be on its own line
+ 
+ 
+ 
+ 
+ 
