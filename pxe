@@ -1,0 +1,3 @@
+# add nfs share to /etc/exports
+# sudo exportfs -ra
+#edit /srv/tftp/pxelinunx.cfg/default
