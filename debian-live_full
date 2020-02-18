@@ -1,0 +1,79 @@
+#!/bin/bash
+#
+# ~/eznixOS103 -- build folder
+# ~/eznix103  -- files location
+#
+#
+# Phase 1: - Assign WKDIR variable the output of pwd
+#
+WKDIR="$(pwd)"
+#
+#
+# Phase 2: - Create the build staging folder
+#
+mkdir eznixOS103
+#
+cd eznixOS103
+#
+#
+# Phase 3: - Set up build environment
+#
+lb config --binary-images iso-hybrid --mode debian --architectures amd64 --linux-flavours amd64 --distribution buster --archive-areas "main contrib non-free" --updates true --security true --cache true --apt-recommends true --debian-installer live --debian-installer-gui true --win32-loader false --iso-application eznixOS103 --iso-preparer eznix-https://sourceforge.net/projects/eznixos/ --iso-publisher eznix-https://sourceforge.net/projects/eznixos/ --iso-volume eznixOS103
+#
+#
+# Phase 4: - Install desktop and applications
+#
+echo task-xfce-desktop > $WKDIR/eznixOS103/config/package-lists/desktop.list.chroot
+#
+echo aqemu haveged less orage gdebi galculator grsync psensor synaptic gparted bleachbit flac faad faac mjpegtools x265 x264 mpg321 ffmpeg streamripper sox mencoder dvdauthor twolame lame asunder aisleriot gnome-mahjongg gnome-chess dosbox filezilla libxvidcore4 vlc soundconverter hplip-gui cdrdao frei0r-plugins htop jfsutils xfsprogs ntfs-3g cdtool mtools gthumb gimp testdisk numix-gtk-theme greybird-gtk-theme breeze-icon-theme breeze-gtk-theme xorriso cdrskin p7zip-full p7zip-rar keepassx hardinfo inxi gnome-disk-utility simplescreenrecorder thunderbird chromium simple-scan remmina arc-theme gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-plugins-good gnome-system-tools dos2unix dialog papirus-icon-theme faenza-icon-theme liferea transmission-gtk handbrake handbrake-cli audacity python-glade2 rar unrar ssh cifs-utils fuse gvfs-fuse gvfs-backends gvfs-bin pciutils squashfs-tools syslinux syslinux-common dosfstools isolinux live-build fakeroot linux-headers-amd64 lsb-release menu build-essential dkms curl wget iftop apt-transport-https dirmngr nvidia-detect openvpn network-manager-openvpn openvpn-systemd-resolved libqt5opengl5 zulumount-gui zulucrypt-gui zulupolkit neofetch xscreensaver ufw gufw firmware-linux firmware-linux-nonfree firmware-misc-nonfree firmware-realtek firmware-atheros firmware-bnx2 firmware-bnx2x firmware-brcm80211 firmware-ipw2x00 firmware-intelwimax firmware-iwlwifi firmware-libertas firmware-netxen firmware-zd1211 > $WKDIR/eznixOS103/config/package-lists/packages.list.chroot
+#
+#
+# Uncomment below line include Broadcom wireless drivers
+# echo b43-fwcutter firmware-b43-installer firmware-b43legacy-installer  > $WKDIR/eznixOS103/config/package-lists/wifidrivers.list.chroot
+#
+# Uncomment below line for calamares installer
+# echo calamares calamares-settings-debian > $WKDIR/eznixOS103/config/package-lists/calamares.list.chroot
+#
+#
+# Phase 5: - Make folders in the chroot
+#
+mkdir -p $WKDIR/eznixOS103/config/includes.chroot/usr/share/eznixOS103
+mkdir -p $WKDIR/eznixOS103/config/includes.chroot/etc/skel/.config
+mkdir -p $WKDIR/eznixOS103/config/includes.chroot/usr/share/images/desktop-base
+mkdir -p $WKDIR/eznixOS103/config/includes.chroot/usr/share/icons/default
+mkdir -p $WKDIR/eznixOS103/config/includes.chroot/usr/local/bin
+mkdir -p $WKDIR/eznixOS103/config/includes.chroot/usr/share/applications
+mkdir -p $WKDIR/eznixOS103/config/hooks/normal
+mkdir -p $WKDIR/eznixOS103/config/includes.chroot/usr/share/doc/eznixOS103
+mkdir -p $WKDIR/eznixOS103/config/includes.chroot/etc/skel/Desktop
+#
+# Uncomment below line for calamares installer
+# mkdir -p $WKDIR/eznixOS103/config/includes.chroot/etc/calamares/branding
+#
+#
+# Phase 6: - Copy files into the chroot
+#
+cp -r $WKDIR/eznix103 $WKDIR/eznixOS103/config/includes.chroot/usr/share/eznixOS103/eznix103
+cp -r $WKDIR/eznix103/bootloaders $WKDIR/eznixOS103/config/bootloaders
+cp -r $WKDIR/eznix103/xfce4 $WKDIR/eznixOS103/config/includes.chroot/etc/skel/.config/xfce4
+cp $WKDIR/eznix103/hooks/* $WKDIR/eznixOS103/config/hooks/normal/
+cp $WKDIR/eznix103/scripts/* $WKDIR/eznixOS103/config/includes.chroot/usr/local/bin/
+cp $WKDIR/eznix103/doc/* $WKDIR/eznixOS103/config/includes.chroot/usr/share/doc/eznixOS103/
+cp $WKDIR/eznix103/backgrounds/* $WKDIR/eznixOS103/config/includes.chroot/usr/share/images/desktop-base/
+cp $WKDIR/eznix103/icons/* $WKDIR/eznixOS103/config/includes.chroot/usr/share/icons/default/
+cp $WKDIR/eznix103/launchers/ezadmin.desktop $WKDIR/eznixOS103/config/includes.chroot/usr/share/applications/
+ln -s /usr/share/doc/eznixOS103 $WKDIR/eznixOS103/config/includes.chroot/etc/skel/Desktop/
+#
+# Uncomment below three lines for calamares installer
+# cp $WKDIR/eznix103/calamares/settings.conf $WKDIR/eznixOS103/config/includes.chroot/etc/calamares/settings.conf
+# cp $WKDIR/eznix103/calamares/usr/share/applications/install-debian.desktop $WKDIR/eznixOS103/config/includes.chroot/usr/share/applications/install-debian.desktop
+# cp -r $WKDIR/eznix103/calamares/branding/eznixos $WKDIR/eznixOS103/config/includes.chroot/etc/calamares/branding/eznixos
+#
+#
+# Uncomment below line IF you wish to include deb packages from misc64 folder
+# cp $WKDIR/eznix103/misc64/* $WKDIR/eznixOS103/config/packages.chroot/
+#
+#
+# Phase 7: - Start the build process
+#
+lb build
