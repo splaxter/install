@@ -1,3 +1,17 @@
+
+apt update && apt upgrade && apt install live-build
+mkdir default-live
+cd default-live
+lb config -a amd64 --apt-recommends false --bootappend-live "boot=live components locales=de.DE_UTF8 keyboard-layouts=de" --debian-installer live
+
+echo '! Packages Priority standard' > config/package-lists/standard.list.chroot
+echo "task-lxde-desktop iceweasel" > config/package-lists/my.list.chroot
+echo "live-tools user-setup sudo eject" > config/package-lists/recommends.list.chroot
+
+Lb build
+
+
+# ALternative :
 #http://ftp.debian.org/debian/dists/stretch/main/installer-amd64/current/images/netboot/netboot.tar.gz
 apt install live-build
 
@@ -26,6 +40,9 @@ lb config noauto \
  # after channging config file -> execute lb config again
  lb config
  
+ 
+
+
  # the folder config/includes.chroot contains the file structure of the new iso
  # if we create opt folder inside this it will be the /opt foolder of the iso
  
