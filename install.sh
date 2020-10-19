@@ -7,3 +7,10 @@
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 # KDE als standard
 #$ sudo systemctl set-default graphical.target
+# install powerline fonts for agnoster
+sudo apt install powerline fonts-powerline
+sudo apt-get install zsh-theme-powerlevel9k
+# write to .zshrc
+echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> ~/.zshrc
+sudo apt-get install zsh-syntax-highlighting
+echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
