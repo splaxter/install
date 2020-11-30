@@ -15,9 +15,9 @@ wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 
 chmod +x install.sh
 ./install.sh -y
-mv zsh-autosuggestions/ zsh-syntax-highlighting/ ~/.oh-my-zsh/plugins
 chsh -s $(which zsh)
-gio open . &
+mv zsh-autosuggestions/ zsh-syntax-highlighting/ ~/.oh-my-zsh/plugins
+mv ../.zshrc ~/
 #sudo apt install powerline fonts-powerline -y
 #sudo apt-get install zsh-theme-powerlevel9k -y
 # write to .zshrc
