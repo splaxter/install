@@ -17,7 +17,7 @@ wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 chmod +x install.sh
 ./install.sh -y
 chsh -s $(which zsh)
-exit
+# 
 echo "change theme and plugins and reboot to take effect"
 mv zsh-autosuggestions/ zsh-syntax-highlighting/ ~/.oh-my-zsh/plugins
 echo ". ~/.zsh_aliases" >> ~/.zshrc
