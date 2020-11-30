@@ -1,0 +1,19 @@
+alias zshconfig="nano ~/.zshrc"
+alias c="clear"
+alias -s py=code
+alias -s md=typora
+alias pycharm='source /home/t.klingenberger/pyCharm/bin/pycharm.sh'
+alias pip='pip3'
+alias python='python3'
+alias nz='nano ~/.zshrc'
+alias sz='source ~/.zshrc'
+alias update='sudo apt update -y && sudo apt upgrade -y'
+alias pycharm='cd ~/pyCharm && ./bin/pycharm.sh &'
+alias winbox='cd ~/Schreibtisch && wine winbox64.exe &'
+alias hg="history | grep"
+alias clip="xclip -selection clipboard < "
+alias top="bpytop"
+alias footer="byobu"
+alias -g isntall="install"
+alias h="howdoi -c -n 5"
+
