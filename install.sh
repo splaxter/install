@@ -4,7 +4,7 @@ sudo apt install zsh wget git -y
 mkdir temp
 mv .zsh_aliases ~/
 cd temp
-#chmod +x install_zsh.sh
+chmod +x update_zsh.py
 git clone https://github.com/zsh-users/zsh-autosuggestions 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 pip install git+git://github.com/Lokaltog/powerline
@@ -20,6 +20,7 @@ chsh -s $(which zsh)
 # 
 echo "change theme and plugins and reboot to take effect"
 mv zsh-autosuggestions/ zsh-syntax-highlighting/ ~/.oh-my-zsh/plugins
+python3 update_zsh.py
 echo ". ~/.zsh_aliases" >> ~/.zshrc
 # mv ../.zshrc ~/
 #sudo apt install powerline fonts-powerline -y
