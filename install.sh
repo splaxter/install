@@ -1,13 +1,12 @@
-#sudo apt update  && apt upgrade
-#sudo apt install zsh wget git dnsmasq 
-#sudo sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-#git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-#git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-#echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+sudo apt update  -y && apt upgrade -y
+sudo apt install zsh wget git -y
+mkdir temp
+cd temp
+wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+chmod +x install.sh
+./install.sh -y
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-# KDE als standard
-#$ sudo systemctl set-default graphical.target
-# install powerline fonts for agnoster
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 sudo apt install powerline fonts-powerline
 sudo apt-get install zsh-theme-powerlevel9k
 # write to .zshrc
