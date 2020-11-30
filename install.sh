@@ -7,6 +7,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 wget https://github.com/powerline/fonts/blob/master/Hack/Hack-Regular.ttf
 wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+gio open .
 chmod +x install.sh
 ./install.sh -y
 mv zsh-autosuggestions/ zsh-syntax-highlighting/ ~/.oh-my-zsh/plugins
