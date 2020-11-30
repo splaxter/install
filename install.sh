@@ -10,7 +10,7 @@ cd ~/.oh-my-zsh/plugins/
 git clone https://github.com/zsh-users/zsh-autosuggestions 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 wget https://github.com/powerline/fonts/blob/master/Hack/Hack-Regular.ttf
-cd 
+cd -
 ./install.sh -y
 #sudo apt install powerline fonts-powerline -y
 #sudo apt-get install zsh-theme-powerlevel9k -y
