@@ -13,7 +13,7 @@ wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbol
 sudo mv PowerlineSymbols.otf /usr/share/fonts/X11/misc
 sudo fc-cache -vf /usr/share/fonts/X11/misc
 sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
-wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+#wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 ./install_zsh.sh -y
 chsh -s $(which zsh)
 
