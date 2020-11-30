@@ -9,7 +9,7 @@ wget https://github.com/powerline/fonts/blob/master/Hack/Hack-Regular.ttf
 wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 chmod +x install.sh
 ./install.sh -y
-mv zsh-autosuggestions/ zsh-syntax-highlighting/ ~/.oh-my-zsh
+mv zsh-autosuggestions/ zsh-syntax-highlighting/ ~/.oh-my-zsh/plugins
 #sudo apt install powerline fonts-powerline -y
 #sudo apt-get install zsh-theme-powerlevel9k -y
 # write to .zshrc
