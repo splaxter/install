@@ -28,5 +28,5 @@ echo ". ~/.zsh_aliases" >> ~/.zshrc
 #sudo apt-get install zsh-theme-powerlevel9k -y
 # write to .zshrc
 #echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> ~/.zshrc
-#sudo apt-get install zsh-syntax-highlighting
-#echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
+sudo apt-get install zsh-syntax-highlighting
+echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
