@@ -1,7 +1,7 @@
 alias zshconfig="nano ~/.zshrc"
 alias c="clear"
-alias -s py=code
-alias -s md=typora
+alias -s py="code"
+alias -s md="typora"
 alias pycharm='source /home/t.klingenberger/pyCharm/bin/pycharm.sh'
 alias pip='pip3'
 alias python='python3'
