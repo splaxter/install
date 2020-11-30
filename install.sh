@@ -3,6 +3,7 @@ sudo apt update  -y && apt upgrade -y
 sudo apt install zsh wget git -y
 mkdir temp
 mv .zsh_aliases ~/
+mv update_zsh.py temp/
 cd temp
 chmod +x update_zsh.py
 git clone https://github.com/zsh-users/zsh-autosuggestions 
