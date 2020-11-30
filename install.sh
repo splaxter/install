@@ -19,7 +19,7 @@ chmod +x install.sh
 chsh -s $(which zsh)
 
 mv zsh-autosuggestions/ zsh-syntax-highlighting/ ~/.oh-my-zsh/plugins
-mv ../.zshrc ~/
+# mv ../.zshrc ~/
 #sudo apt install powerline fonts-powerline -y
 #sudo apt-get install zsh-theme-powerlevel9k -y
 # write to .zshrc
