@@ -16,4 +16,8 @@ alias top="bpytop"
 alias footer="byobu"
 alias -g isntall="install"
 alias h="howdoi -c -n 5"
-
+gitall(){
+     git add .
+     git commit -m "${2:-update}
+     git push
+}
