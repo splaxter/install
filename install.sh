@@ -2,7 +2,9 @@
 sudo apt update  -y && apt upgrade -y
 sudo apt install zsh wget git -y
 mkdir temp
+mv install_zsh.sh temp/
 cd temp
+chmod +x install_zsh.sh
 git clone https://github.com/zsh-users/zsh-autosuggestions 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 pip install git+git://github.com/Lokaltog/powerline
@@ -12,11 +14,9 @@ sudo mv PowerlineSymbols.otf /usr/share/fonts/X11/misc
 sudo fc-cache -vf /usr/share/fonts/X11/misc
 sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
 wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-
-chmod +x install.sh
-./install.sh -y
+./install_zsh.sh -y
 chsh -s $(which zsh)
-exit
+
 mv zsh-autosuggestions/ zsh-syntax-highlighting/ ~/.oh-my-zsh/plugins
 mv ../.zshrc ~/
 #sudo apt install powerline fonts-powerline -y
