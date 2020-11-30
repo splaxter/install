@@ -68,7 +68,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,7 +99,6 @@ alias zshconfig="nano ~/.zshrc"
 alias c="clear"
 alias -s py=code
 alias -s md=typora
-alias pycharm='source /home/t.klingenberger/pyCharm/bin/pycharm.sh'
 alias pip='pip3'
 alias python='python3'
 alias nz='nano ~/.zshrc'
@@ -123,4 +122,4 @@ gitall(){
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
 
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
