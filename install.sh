@@ -1,3 +1,4 @@
+#!/bin/sh
 sudo apt update  -y && apt upgrade -y
 sudo apt install zsh wget git -y
 mkdir temp
