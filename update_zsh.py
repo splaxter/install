@@ -5,7 +5,7 @@ home = expanduser("~")
 theme = 'ZSH_THEME="agnoster"'
 plugins = "plugins=(git zsh-autosuggestions zsh-syntax-highlighting)"
 out = ""
-with open(f"{home/}.zshrc" ,"r") as file:
+with open(f"{home}/.zshrc" ,"r") as file:
     for line in file:
         if line.startswith("plugins"):
             out += plugins
@@ -13,5 +13,5 @@ with open(f"{home/}.zshrc" ,"r") as file:
             out += theme
         else:
             out += line
-with open(f"{home/}.zshrc", "w") as file:
+with open(f"{home}/.zshrc", "w") as file:
     file.write(out)
