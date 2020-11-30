@@ -7,8 +7,8 @@ chmod +x install.sh
 ./install.sh -y
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-sudo apt install powerline fonts-powerline
-sudo apt-get install zsh-theme-powerlevel9k
+sudo apt install powerline fonts-powerline -y
+sudo apt-get install zsh-theme-powerlevel9k -y
 # write to .zshrc
 echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> ~/.zshrc
 sudo apt-get install zsh-syntax-highlighting
