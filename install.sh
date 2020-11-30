@@ -2,7 +2,7 @@
 sudo apt update  -y && apt upgrade -y
 sudo apt install zsh wget git -y
 mkdir temp
-#mv install_zsh.sh temp/
+mv .zsh_aliases ~/
 cd temp
 #chmod +x install_zsh.sh
 git clone https://github.com/zsh-users/zsh-autosuggestions 
