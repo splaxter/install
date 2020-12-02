@@ -2,8 +2,8 @@ from os.path import expanduser
 home = expanduser("~")
 
 
-theme = 'ZSH_THEME="agnoster"'
-plugins = "plugins=(git zsh-autosuggestions zsh-syntax-highlighting)"
+theme = 'ZSH_THEME="agnoster"\n'
+plugins = "plugins=(git zsh-autosuggestions zsh-syntax-highlighting)\n"
 out = ""
 with open(f"{home}/.zshrc" ,"r") as file:
     for line in file:
