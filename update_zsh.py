@@ -15,3 +15,5 @@ with open(f"{home}/.zshrc" ,"r") as file:
             out += line
 with open(f"{home}/.zshrc", "w") as file:
     file.write(out)
+
+print(".zshrc edited!")
