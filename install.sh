@@ -19,7 +19,7 @@ chmod +x install.sh
 ./install.sh -y
 chsh -s $(which zsh)
 # 
-echo "change theme and plugins and reboot to take effect"
+echo "reboot to take effect"
 mv zsh-autosuggestions/ zsh-syntax-highlighting/ ~/.oh-my-zsh/plugins
 python3 update_zsh.py
 echo ". ~/.zsh_aliases" >> ~/.zshrc
