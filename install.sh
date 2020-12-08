@@ -8,6 +8,8 @@ cd temp
 chmod +x update_zsh.py
 git clone https://github.com/zsh-users/zsh-autosuggestions 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+wget https://github.com/Peltoche/lsd/releases/download/0.18.0/lsd_0.18.0_amd64.deb   # LS substitution
+wget https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
 pip install git+git://github.com/Lokaltog/powerline
 wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
 wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
