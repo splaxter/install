@@ -8,6 +8,14 @@ cd temp
 chmod +x update_zsh.py
 git clone https://github.com/zsh-users/zsh-autosuggestions 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+# Install LSD -> coloured ls
+wget https://github.com/Peltoche/lsd/releases/download/0.18.0/lsd_0.18.0_amd64.deb   # LS substitution
+sudo dpkg -i lsd_0.18.0_amd64.deb  # install LSD
+# Install ranger -> cli file explorer
+apt install ranger
+git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+echo "default_linemode devicons" > ~/.config/ranger/rc.conf
+wget https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
 pip install git+git://github.com/Lokaltog/powerline
 wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
 wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
@@ -30,3 +38,5 @@ echo ". ~/.zsh_aliases" >> ~/.zshrc
 #echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> ~/.zshrc
 sudo apt-get install zsh-syntax-highlighting
 echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
+cd ..
+rm -rf install
