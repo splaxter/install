@@ -123,3 +123,27 @@ gitall(){
 #source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
 
 # source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+function cd() {
+  builtin cd "$@" || return  # Ensure cd works normally
+
+  if [[ -z "$VIRTUAL_ENV" ]] ; then
+    ## If 'venv' folder is found, activate the virtual environment
+    if [[ -d ./venv ]] ; then
+      source ./venv/bin/activate
+    fi
+  else
+    ## Check if the current folder still belongs to the earlier VIRTUAL_ENV folder
+    ## If not, deactivate
+    parentdir="$(dirname "$VIRTUAL_ENV")"
+    if [[ "$PWD"/ != "$parentdir"/* ]] ; then
+      deactivate
+    fi
+  fi
+
+  ## Check if .env file exists and source it
+  if [[ -f .env ]] ; then
+    source .env
+  fi
+}
+
